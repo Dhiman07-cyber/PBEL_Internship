@@ -1,0 +1,713 @@
+/* ==========================================================================================
+   GOOGLE FONT
+========================================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* ==========================================================================================
+   GLOBAL RESET
+========================================================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+select,
+input{
+    font-family:inherit;
+}
+
+
+/* ==========================================================================================
+   HEADER
+========================================================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:white;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.container{
+
+    width:92%;
+    max-width:1300px;
+
+    height:80px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+}
+
+
+/* ==========================================================================================
+   LOGO
+========================================================================================== */
+
+.logo{
+    flex-shrink:0;
+}
+
+.logo a{
+
+    font-size:28px;
+    font-weight:700;
+
+    color:#1d4ed8;
+
+}
+
+
+/* ==========================================================================================
+   SEARCH
+========================================================================================== */
+
+.search-box{
+
+    flex:1;
+
+}
+
+.search-box input{
+
+    width:100%;
+    height:45px;
+
+    border:none;
+
+    outline:none;
+
+    padding:0 20px;
+
+    background:#eef3ff;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    background:white;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.18);
+
+}
+
+
+/* ==========================================================================================
+   NAVIGATION
+========================================================================================== */
+
+nav{
+
+    margin-left:auto;
+
+}
+
+nav ul{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    color:#444;
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#2563eb;
+
+}
+
+.active{
+
+    color:#2563eb;
+    font-weight:600;
+
+}
+
+
+/* ==========================================================================================
+   HERO SECTION
+========================================================================================== */
+
+.hero{
+
+    width:92%;
+    max-width:1300px;
+
+    margin:35px auto;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#2563eb,#4f8df8);
+
+    color:white;
+
+    padding:70px 60px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.18);
+
+    padding:8px 16px;
+
+    border-radius:25px;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+
+/* ==========================================================================================
+   MAIN
+========================================================================================== */
+
+.main-container{
+
+    width:92%;
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+
+/* ==========================================================================================
+   CATEGORY BUTTONS
+========================================================================================== */
+
+#tabs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+#tabs button{
+
+    border:none;
+
+    background:white;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+#tabs button:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================================================
+   FILTER AREA
+========================================================================================== */
+
+.controls{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+    margin-bottom:40px;
+
+}
+
+.control-box{
+
+    flex:1;
+
+    min-width:250px;
+
+}
+
+.control-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+.control-box select{
+
+    width:100%;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border-radius:10px;
+
+    border:1px solid #d7dce6;
+
+    outline:none;
+
+    background:white;
+
+}
+
+.control-box select:focus{
+
+    border-color:#2563eb;
+
+}
+
+
+/* ==========================================================================================
+   LOADER
+========================================================================================== */
+
+#loader{
+
+    width:45px;
+    height:45px;
+
+    margin:50px auto;
+
+    border-radius:50%;
+
+    border:5px solid #d8d8d8;
+
+    border-top:5px solid #2563eb;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================================================================
+   PRODUCT GRID
+========================================================================================== */
+
+#productContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+    margin-bottom:70px;
+
+}
+
+
+/* ==========================================================================================
+   PRODUCT CARD
+========================================================================================== */
+
+/*
+The JavaScript will create each card dynamically.
+
+Just add
+
+cardDiv.className = "card";
+
+inside JavaScript.
+
+Similarly,
+
+img.className="product-image";
+
+button.className="buy-btn";
+
+price.className="price";
+
+cat.className="category";
+
+title.className="title";
+
+No other JavaScript changes are needed.
+*/
+
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+
+.product-image{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+    transition:.3s;
+
+}
+
+.card:hover .product-image{
+
+    transform:scale(1.05);
+
+}
+
+
+.category{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    margin-bottom:12px;
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+    padding:5px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+.title{
+
+    margin:12px 0;
+
+    font-weight:600;
+
+    height:50px;
+
+    overflow:hidden;
+
+}
+
+
+.price{
+
+    font-size:22px;
+
+    color:#16a34a;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+}
+
+
+.buy-btn{
+
+    width:100%;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+    background:#1e40af;
+
+}
+
+
+/* ==========================================================================================
+   FOOTER
+========================================================================================== */
+
+footer{
+
+    margin-top:auto;
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.footer-container{
+
+    width:92%;
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:55px 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:35px;
+
+}
+
+.footer-column h3{
+
+    margin-bottom:18px;
+
+}
+
+.footer-column a{
+
+    display:block;
+
+    color:#d6d6d6;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer-column a:hover{
+
+    color:white;
+
+    padding-left:6px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    color:#bbb;
+
+}
+
+
+/* ==========================================================================================
+   RESPONSIVE DESIGN
+========================================================================================== */
+
+@media(max-width:900px){
+
+    .container{
+
+        flex-wrap:wrap;
+
+        height:auto;
+
+        padding:20px 0;
+
+    }
+
+    .logo{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .search-box{
+
+        width:100%;
+        order:3;
+
+    }
+
+    nav{
+
+        width:100%;
+
+    }
+
+    nav ul{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero{
+
+        padding:45px 30px;
+
+    }
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .controls{
+
+        flex-direction:column;
+
+    }
+
+    #tabs{
+
+        justify-content:flex-start;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+}

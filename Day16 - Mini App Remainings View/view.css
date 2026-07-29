@@ -1,0 +1,640 @@
+/* ==========================================================================================
+   GOOGLE FONT
+========================================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* ==========================================================================================
+   GLOBAL RESET
+========================================================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#222;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+
+
+/* ==========================================================================================
+   HEADER
+========================================================================================== */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:white;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+
+}
+
+.container{
+
+    width:92%;
+
+    max-width:1300px;
+
+    height:80px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+
+
+/* ==========================================================================================
+   LOGO
+========================================================================================== */
+
+.logo{
+
+    flex-shrink:0;
+
+}
+
+.logo a{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+
+
+/* ==========================================================================================
+   NAVIGATION
+========================================================================================== */
+
+nav{
+
+    margin-left:auto;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    color:#444;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#2563eb;
+
+}
+
+.active{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+
+
+/* ==========================================================================================
+   HERO SECTION
+========================================================================================== */
+
+.hero{
+
+    width:92%;
+
+    max-width:1300px;
+
+    margin:35px auto;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#2563eb,#4f8df8);
+
+    color:white;
+
+    padding:60px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ==========================================================================================
+   MAIN CONTAINER
+========================================================================================== */
+
+.main-container{
+
+    width:92%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================================================================================
+   SINGLE PRODUCT
+========================================================================================== */
+
+#parent{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    margin-bottom:70px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+/* ==========================================================================================
+   LEFT SIDE
+========================================================================================== */
+
+#leftChild{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#leftChild img{
+
+    width:350px;
+
+    height:350px;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+#leftChild img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* ==========================================================================================
+   RIGHT SIDE
+========================================================================================== */
+
+#rightChild{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+/* ==========================================================================================
+   PRODUCT DETAILS
+========================================================================================== */
+
+.product-category{
+
+    display:inline-block;
+
+    width:fit-content;
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+}
+
+.product-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+.product-price{
+
+    font-size:34px;
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+.description{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================================================================
+   RATING BOX
+========================================================================================== */
+
+.rating-box{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.rating-box p{
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+
+
+/* ==========================================================================================
+   BACK BUTTON
+========================================================================================== */
+
+.back-btn{
+
+    width:200px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* ==========================================================================================
+   FOOTER
+========================================================================================== */
+
+footer{
+
+    margin-top:auto;
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.footer-container{
+
+    width:92%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:55px 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:35px;
+
+}
+
+.footer-column h3{
+
+    margin-bottom:18px;
+
+}
+
+.footer-column a{
+
+    display:block;
+
+    color:#d6d6d6;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer-column a:hover{
+
+    color:white;
+
+    padding-left:6px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    color:#bbb;
+
+}
+
+
+
+/* ==========================================================================================
+   RESPONSIVE DESIGN
+========================================================================================== */
+
+@media(max-width:900px){
+
+    .container{
+
+        flex-wrap:wrap;
+
+        height:auto;
+
+        padding:20px 0;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    nav{
+
+        width:100%;
+
+    }
+
+    nav ul{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero{
+
+        padding:45px 30px;
+
+    }
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+    #parent{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #leftChild img{
+
+        width:280px;
+
+        height:280px;
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    .hero{
+
+        text-align:center;
+
+        padding:35px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    #parent{
+
+        padding:25px;
+
+        gap:25px;
+
+    }
+
+    #leftChild img{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .product-title{
+
+        font-size:24px;
+
+    }
+
+    .product-price{
+
+        font-size:28px;
+
+    }
+
+    .rating-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .back-btn{
+
+        width:100%;
+
+    }
+
+}

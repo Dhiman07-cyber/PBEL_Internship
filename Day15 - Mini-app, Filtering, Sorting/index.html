@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Style Layout</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">LOGO</a>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products...">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Cart <span id="cartBadge" class="cart-count">0</span></a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Login / Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="controls-wrapper">
+            <div id="tabs">
+                <button class="tab-btn active" data-category="all">All</button>
+                <button class="tab-btn" data-category="men's clothing">Men's</button>
+                <button class="tab-btn" data-category="women's clothing">Women's</button>
+                <button class="tab-btn" data-category="jewelery">Jewelry</button>
+                <button class="tab-btn" data-category="electronics">Electronics</button>
+            </div>
+            <div id="filter">
+                <select name="sort" id="sortByPrice">
+                    <option value="default">Sort by: Featured</option>
+                    <option value="low-high">Sort by: Price (Low to High)</option>
+                    <option value="high-low">Sort by: Price (High to Low)</option>
+                    <option value="rating">Sort by: Top Rated</option>
+                </select>
+                <select name="filter" id="filterByCategory">
+                    <option value="all">Filter by: All Categories</option>
+                    <option value="men's clothing">Men's Clothing</option>
+                    <option value="women's clothing">Women's Clothing</option>
+                    <option value="jewelery">Jewelry</option>
+                    <option value="electronics">Electronics</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loader">
+            
+        </div>
+
+        <div id="productContainer">
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Products</a>
+                <a href="#">Cart</a>
+                <a href="#">Wishlist</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Your Company. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+<script src="index.js"></script>
+</html>

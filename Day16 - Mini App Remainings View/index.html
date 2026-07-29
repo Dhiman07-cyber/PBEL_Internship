@@ -1,0 +1,325 @@
+<!-- 27th July -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere | Fake Store</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ==========================================================
+         HEADER
+    =========================================================== -->
+
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+                <a href="index.html">
+                    ShopSphere
+                </a>
+            </div>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html" class="active">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html">
+                            Cart
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Wishlist
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================================
+         HERO SECTION
+    =========================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                ✨ Fake Store API Project
+            </span>
+
+            <h1>
+                Discover Products You'll Love
+            </h1>
+
+            <p>
+                Practice project using HTML, CSS and JavaScript with
+                Fetch API, Local Storage, Filtering and Sorting.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         MAIN SECTION
+    =========================================================== -->
+
+    <main class="main-container">
+
+        <!-- ==========================
+             CATEGORY BUTTONS
+        =========================== -->
+
+        <section id="tabs">
+
+            <button
+                class="tab-btn active"
+                data-category="all">
+                All Products
+            </button>
+
+            <button
+                class="tab-btn"
+                data-category="men's clothing">
+                Men's
+            </button>
+
+            <button
+                class="tab-btn"
+                data-category="women's clothing">
+                Women's
+            </button>
+
+            <button
+                class="tab-btn"
+                data-category="jewelery">
+                Jewelry
+            </button>
+
+            <button
+                class="tab-btn"
+                data-category="electronics">
+                Electronics
+            </button>
+
+        </section>
+
+
+        <!-- ==========================
+             FILTERS
+        =========================== -->
+
+        <section class="controls">
+
+            <div class="control-box">
+
+                <label>
+                    Sort Products
+                </label>
+
+                <select
+                    id="sortByPrice">
+
+                    <option value="default">
+                        Featured
+                    </option>
+
+                    <option value="low-high">
+                        Price : Low to High
+                    </option>
+
+                    <option value="high-low">
+                        Price : High to Low
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="control-box">
+
+                <label>
+                    Filter Category
+                </label>
+
+                <select
+                    id="filterByCategory">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="men's clothing">
+                        Men's Clothing
+                    </option>
+
+                    <option value="women's clothing">
+                        Women's Clothing
+                    </option>
+
+                    <option value="jewelery">
+                        Jewelry
+                    </option>
+
+                    <option value="electronics">
+                        Electronics
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             LOADER
+        =========================== -->
+
+        <div id="loader"></div>
+
+
+        <!-- ==========================
+             PRODUCTS
+        =========================== -->
+
+        <section
+            id="productContainer">
+
+            <!--
+                All Product Cards
+                will be created
+                using JavaScript.
+            -->
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================================
+         FOOTER
+    =========================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h3>
+                    ShopSphere
+                </h3>
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Careers
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Products
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="#">
+                    Wishlist
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 ShopSphere.
+            Built using HTML, CSS & JavaScript.
+
+        </div>
+
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
