@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | IBM Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">IBM STORE</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html" id="navAuthLink">Login / Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-section">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button id="tabLogin" class="active">Login</button>
+                <button id="tabRegister">Register</button>
+            </div>
+
+            <div class="form-container">
+                <form id="loginForm">
+                    <h2>Welcome Back</h2>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Login</button>
+                </form>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Create Account</h2>
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="registerName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="registerPassword" placeholder="Create password" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="text" id="registerPhone" placeholder="Phone Number" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 IBM Store. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        {
+            const tabLogin = document.getElementById("tabLogin");
+            const tabRegister = document.getElementById("tabRegister");
+            const loginFormEl = document.getElementById("loginForm");
+            const registerFormEl = document.getElementById("registerForm");
+
+            tabLogin.onclick = () => {
+                tabLogin.classList.add("active");
+                tabRegister.classList.remove("active");
+                loginFormEl.style.display = "block";
+                registerFormEl.style.display = "none";
+            };
+
+            tabRegister.onclick = () => {
+                tabRegister.classList.add("active");
+                tabLogin.classList.remove("active");
+                loginFormEl.style.display = "none";
+                registerFormEl.style.display = "block";
+            };
+        }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

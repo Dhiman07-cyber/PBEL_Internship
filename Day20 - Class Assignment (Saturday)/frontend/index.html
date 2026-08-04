@@ -1,0 +1,76 @@
+<!-- 31st July 2026 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Store | Shop Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">IBM STORE</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><span id="welcomeMsg" style="color: #0f62fe; font-weight: 600; margin-right: 15px;"></span></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" id="cartBtn">Cart (<span id="cartCount">0</span>)</a></li>
+                    <li><a href="#" id="authBtn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="store-container">
+        <section class="products-section">
+            <h2>Featured Products</h2>
+            <div id="productGrid" class="product-grid">
+                <!-- Products loaded here -->
+            </div>
+        </section>
+
+        <!-- Sidebar Cart -->
+        <section id="cartSidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Shopping Cart</h3>
+                <button id="closeCartBtn">&times;</button>
+            </div>
+            <div id="cartItemsList" class="cart-items-list">
+                <!-- Cart items loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: $<span id="cartTotalVal">0.00</span></div>
+                <button class="primary-btn checkout-btn">Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 IBM Store. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
