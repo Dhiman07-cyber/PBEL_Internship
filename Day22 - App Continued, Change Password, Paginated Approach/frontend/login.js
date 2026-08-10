@@ -97,66 +97,63 @@ loginForm.addEventListener("submit", async (e) => {
        - Header `"Content-Type": "application/json"` tells Express `express.json()` middleware to parse body as JSON.
        - `JSON.stringify(userData)` converts JavaScript object into raw JSON string.
     */
-    const response = await fetch("http://localhost:8000/api/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userData)
-    });
-
-    // 4. Parse the JSON response received from backend `userLogin` controller
-    const res = await response.json();
-
-    /*
-    5. CLIENT-SIDE TOKEN & USER PERSISTENCE (`localStorage`)
-       WHY? Browsers lose variable state when navigating between pages. 
-       `localStorage` stores key-value strings permanently in the user's browser disk until deleted.
-       - `localStorage.setItem("user", JSON.stringify(res.user))`: Saves user details.
-       - `localStorage.setItem("token", res.user.token)`: Saves the JWT authorization token.
-       This token will be read by `frontend/user.js` to authorize requests on protected pages!
-    */
-    localStorage.setItem("user", JSON.stringify(res.user));
-    localStorage.setItem("token", res.user.token);
-
-    if (res.ok) {
-        /*
-        6. REDIRECTING TO PROTECTED PROFILE PAGE (`user.html`)
-           `window.location.href = "user.html"` instructs browser to navigate to the user profile page immediately.
-        */
-        window.location.href = "user.html";
-        
-        // Show success notification toast
-        Toastify({
-            text: res.message,
-            duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
+    try {
+        const response = await fetch("http://localhost:8000/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-            onClick: function () { }
-        }).showToast();
-    } else {
-        // Show failure notification toast
+            body: JSON.stringify(userData)
+        });
+
+        // 4. Parse the JSON response received from backend `userLogin` controller
+        const res = await response.json();
+
+        if (response.ok && res.user) {
+            /*
+            5. CLIENT-SIDE TOKEN & USER PERSISTENCE (`localStorage`)
+               Save user details and JWT token only when login is successful!
+            */
+            localStorage.setItem("user", JSON.stringify(res.user));
+            localStorage.setItem("token", res.user.token || res.user.user?.token);
+
+            window.location.href = "user.html";
+            
+            // Show success notification toast
+            Toastify({
+                text: res.message || "Login successful!",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
+        } else {
+            // Show failure notification toast
+            Toastify({
+                text: res.message || "Login failed!",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "left",
+                style: {
+                    background: "linear-gradient(to right, #b00000, #460404)",
+                }
+            }).showToast();
+        }
+    } catch (err) {
+        console.error("Login Error:", err);
         Toastify({
-            text: res.message,
+            text: "Server error or connection failed!",
             duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
             close: true,
             gravity: "top",
             position: "left",
-            stopOnFocus: true,
             style: {
                 background: "linear-gradient(to right, #b00000, #460404)",
-            },
-            onClick: function () { }
+            }
         }).showToast();
     }
-
-})
+});
