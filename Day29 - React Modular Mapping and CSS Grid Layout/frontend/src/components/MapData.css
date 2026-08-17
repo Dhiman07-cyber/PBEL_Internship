@@ -1,0 +1,66 @@
+/*******************************************************************************************************
+ * *************************************** MAP DATA CSS (DAY 29) ***************************************
+ *
+ * New Topics Covered in Day 29:
+ * - Responsive grids without media queries (`repeat(auto-fill, minmax(...))`)
+ * - Theme-aware variable binding (`var(--bg)`, `var(--border)`)
+ * - Transition properties and interactive transform animations (`translateY`, `box-shadow`)
+ *
+ * Cross-File & Architecture References:
+ * - Applied to elements in: `components/MapData.jsx` & `pages/Home.jsx`
+ *******************************************************************************************************/
+
+/*
+Grid wrapper hosting user cards.
+- repeat(auto-fill): Fills the grid container row with as many columns as fit.
+- minmax(260px, 1fr): Ensures columns are at least 260px wide, and stretch to cover remaining fraction (1fr).
+*/
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/*
+Individual card styling.
+- background/border: bound to CSS variables to support light/dark mode changes.
+- transition: smooths style adjustments over 0.2 seconds to produce premium animations.
+*/
+.user-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  box-sizing: border-box;
+}
+
+/*
+Interactive hover micro-animation.
+- transform: shifts card 2px upward on the Y-axis.
+- box-shadow: intensifies shadow to create depth.
+- border-color: changes boundary color to theme accent color.
+*/
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.user-card h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  text-transform: capitalize;
+}
+
+.user-card p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--text);
+  word-break: break-all;
+}

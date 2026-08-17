@@ -1,0 +1,17 @@
+{
+  // =========================================================================================
+  // JSCONFIG.JSON - VS CODE & JAVASCRIPT LANGUAGE SERVICE CONFIGURATION
+  // =========================================================================================
+  // This file configures VS Code's IntelliSense, auto-imports, and type checking for JavaScript.
+  // Paired with `vite.config.js` to enable path aliasing (`@/` -> `./src/*`).
+  "compilerOptions": {
+    "target": "ESNext", // Specifies modern ECMAScript target version for language features
+    "module": "ESNext", // Specifies ES module syntax (`import` / `export`)
+    "moduleResolution": "Bundler", // Uses modern bundler (Vite) module resolution strategy
+    "skipLibCheck": true, // Skips type checking of declaration files (`.d.ts`) for faster IDE performance
+    "paths": {
+      // Maps `@/*` path alias to `./src/*` directory, matching `resolve.alias` in `vite.config.js`
+      "@/*": ["./src/*"]
+    }
+  }
+}

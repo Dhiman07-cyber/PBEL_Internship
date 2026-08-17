@@ -1,2 +1,44 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build & Output directories
+dist/
+**/dist/
+build/
+**/build/
+.vite/
+**/.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment & OS files
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+ENV/
+pyrefly.toml
+**/pyrefly.toml
+pyproject.toml
+
+# IDE & Editor files
+.vscode/
+.idea/
+
+# Archives
 NET.rar
 *.rar
+

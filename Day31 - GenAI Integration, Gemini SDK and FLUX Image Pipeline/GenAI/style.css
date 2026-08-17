@@ -1,0 +1,75 @@
+/*******************************************************************************************************
+ * *************************************** GENAI VIEW STYLING (DAY 31) *********************************
+ *
+ * New Topics Covered in Day 31:
+ * - Dynamic flex alignments and centered layout containers
+ * - Textarea and form control dimensions
+ * - Toggle styles for layout transitions ('hidden' class definitions)
+ *
+ * Cross-File & Architecture References:
+ * - Style definitions mapped to: `GenAI/index.html`
+ *******************************************************************************************************/
+
+body {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Centered content box */
+.container {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px 5px 10px 0;
+  cursor: pointer;
+}
+
+/* Generate call-to-action button */
+.generate-btn {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+#result {
+  margin-top: 15px;
+  background: #fafafa;
+  padding: 10px;
+  min-height: 80px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+#generatedImage {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* 
+Hiding elements dynamically.
+When classList includes 'hidden', display block rules are overridden to none.
+*/
+.hidden {
+  display: none;
+}

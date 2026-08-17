@@ -1,0 +1,63 @@
+<!-- 17th August -->
+
+
+<!-- 
+/*******************************************************************************************************
+ * *************************************** GENAI FRONTEND PORTAL (DAY 31) *******************************
+ *
+ * New Topics Covered in Day 31:
+ * - Dynamic parameter mappings and prompt template selection triggers
+ * - Multi-layer text/image generation user flow structure
+ * - Clean CSS class-based visibility toggles ('hidden' configurations)
+ *
+ * Cross-File & Architecture References:
+ * - Stylesheet loaded: `style.css`
+ * - Controller logic script loaded: `script.js`
+ * - Targeted API endpoints: calls Node Express server (http://localhost:5000/generate)
+ *******************************************************************************************************/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>AI Content Generator</h1>
+
+    <!-- Input text prompt -->
+    <textarea id="prompt" placeholder="Enter your prompt..."></textarea>
+
+    <!-- Template Presets: Sets input content to predefined structural layouts -->
+    <div class="buttons">
+      <button onclick="useTemplate('resume')">Resume</button>
+      <button onclick="useTemplate('blog')">Blog</button>
+      <button onclick="useTemplate('linkedin')">LinkedIn</button>
+    </div>
+
+    <!-- Generate Action Button -->
+    <button class="generate-btn" onclick="generateContent()">Generate</button>
+
+    <!-- Loading Indicator (hidden by default, toggled via JavaScript className adjustments) -->
+    <p id="loading" class="hidden">⏳ Generating...</p>
+
+    <!-- Result Display Element -->
+    <div id="result">
+      <p id="generatedContent" class="hidden" ></p>
+    </div>
+
+    <!-- Client-side Download Trigger (hidden by default) -->
+    <button id="downloadBtn" class="hidden" onclick="downloadImage()">Download</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
