@@ -1,19 +1,19 @@
 /*******************************************************************************************************
- *************************************** GOOGLE OAUTH AUTHENTICATION ROUTES ****************************
+ * *************************************** GOOGLE OAUTH AUTHENTICATION ROUTES (JWT-BASED) **************
  *
  * Topics Covered:
- * - Setting up Express Router for OAuth authentication endpoints
+ * - Setting up Express Router for JWT-based Google OAuth endpoints
  * - Initiating Google OAuth Login Consent Screen (`/api/google`)
  * - Handling Google OAuth Callback URL (`/api/google/callback`)
  * - Generating JSON Web Tokens (JWT) from Google authenticated profile (`jwt.sign`)
- * - Redirecting authenticated users back to the React client application
+ * - Redirecting authenticated users back to the React client application with token in query params
  * - Exporting the authentication router to be mounted in `server.js`
  *
  * Cross-File & Architecture References:
  * - Upstream Strategy: `passport/google.js` configures the GoogleStrategy used by `passport.authenticate`
  * - Model: User document populated onto `req.user` by Passport verify callback
  * - Server Mount: `server.js` mounts this router globally via `app.use('/', userRouter)`
- * - Frontend Consumer: `App.jsx` triggers `/api/google` and parses the authenticated user session
+ * - Frontend Consumer: `App.jsx` triggers `/api/google` and parses the authenticated user session via URL params
  *
  *******************************************************************************************************/
 
@@ -98,8 +98,10 @@ userRouter.get(
            - `picture`: User's profile photo URL
            We sign it with our secret key ("PBEL") and set an expiration time of 1 day ("1d").
 
-        3. Redirect to Frontend:
-           We redirect the browser back to our React application running at `http://localhost:5173`.
+        3. Redirect to Frontend with Token:
+           We redirect the browser back to our React application running at `http://localhost:5173` 
+           and append the JWT token as a query parameter (`?token=...`) so the frontend can capture 
+           it and store it in localStorage.
         */
 
         const token = jwt.sign({
@@ -109,8 +111,8 @@ userRouter.get(
             picture: req.user.picture,
         }, "PBEL", { expiresIn: "1d" });
 
-        // Redirect user back to the React frontend application
-        res.redirect("http://localhost:5173");
+        // Redirect user back to the React frontend application with the JWT token
+        res.redirect(`http://localhost:5173/?token=${token}`);
     }
 );
 

@@ -46,7 +46,7 @@
      --> User authorizes access
      --> Google redirects back to backend callback URL (`/api/google/callback`) with auth code
      --> Passport exchanges code for profile info & runs verify callback below
-     --> Backend creates/finds user in MongoDB & generates a JWT token for the frontend!
+     --> Backend creates/finds user in MongoDB & establishes a server-side session!
 */
 
 // =========================================================================================

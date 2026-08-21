@@ -64,9 +64,12 @@ const app = express();
 Instantiate the Express server application.
 */
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 /*
-Globally register CORS middleware so browsers permit requests from other origins (e.g. frontend port).
+Globally register CORS middleware with origin and credentials enabled so browsers permit session cookies cross-origin.
 */
 
 app.use(express.json());
